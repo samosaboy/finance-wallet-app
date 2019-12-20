@@ -1,24 +1,197 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F0S-Lv-H5l">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="v0w-HM-lVb">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="cQe-Qq-2LR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hfK-wH-1yk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Rnn-H0-gM4"/>
                     </view>
+                    <navigationItem key="navigationItem" id="xpX-5e-pln"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="byt-JO-Keb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-742" y="1730"/>
+        </scene>
+        <!--Wallets-->
+        <scene sceneID="9Jv-a2-x0o">
+            <objects>
+                <navigationController id="G3I-Yi-H4I" customClass="WalletsNavigationViewController" customModule="crypto_wallet_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Wallets" image="creditcard" catalog="system" id="DEH-T6-bmS"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Vh4-4E-hoW">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="g6W-yO-QQB">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="XzZ-Pz-0f2" kind="relationship" relationship="rootViewController" id="rJk-4H-sk4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Scu-hr-gtK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1658" y="984"/>
+        </scene>
+        <!--Main App Tab Bar Controller-->
+        <scene sceneID="bUl-8P-2Cs">
+            <objects>
+                <tabBarController id="F0S-Lv-H5l" customClass="MainAppTabBarController" customModule="crypto_wallet_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="y6S-b3-gaR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="G3I-Yi-H4I" kind="relationship" relationship="viewControllers" id="wvc-Ww-Ezl"/>
+                        <segue destination="bc2-lu-aN2" kind="relationship" relationship="viewControllers" id="JEK-Sd-E3L"/>
+                        <segue destination="GTJ-Pr-8I1" kind="relationship" relationship="viewControllers" id="e5c-Sr-BBf"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TUb-3u-iBP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-742" y="173"/>
+        </scene>
+        <!--Markets-->
+        <scene sceneID="sCy-Qb-Oyb">
+            <objects>
+                <navigationController id="bc2-lu-aN2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Markets" image="tag" catalog="system" id="gIc-4I-1U9"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7xN-tm-up0">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="cQe-Qq-2LR" kind="relationship" relationship="rootViewController" id="lFE-P9-zfO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FMZ-Lq-AOF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-741" y="984"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Bdq-GU-XbY">
+            <objects>
+                <viewController id="uir-b7-ej5" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GAJ-YN-5nF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="iDC-ug-m5I"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pW8-MY-MBY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kK7-a7-py1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="193" y="1730"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="JGJ-gs-0T7">
+            <objects>
+                <navigationController id="GTJ-Pr-8I1" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="szv-ho-abh"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kky-ii-oOu">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="uir-b7-ej5" kind="relationship" relationship="rootViewController" id="W9l-T5-YMu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="04l-AT-T3U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="193" y="984"/>
+        </scene>
+        <!--Send Money View Controller-->
+        <scene sceneID="fYg-Sf-xGs">
+            <objects>
+                <viewController storyboardIdentifier="SendMoneyViewController" interfaceStyle="light" id="Pkm-Ok-Shi" customClass="SendMoneyViewController" customModule="crypto_wallet_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xMV-Gi-cu2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uhX-Et-JRG">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="azg-xq-FDf">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zNp-Gs-VdS">
+                                            <rect key="frame" x="20" y="64" width="48" height="30"/>
+                                            <state key="normal" title="Cancel">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                        </button>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DZo-WU-gG3">
+                                            <rect key="frame" x="0.0" y="502" width="414" height="360"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="CVV-ZI-rWY" firstAttribute="trailing" secondItem="DZo-WU-gG3" secondAttribute="trailing" id="Dn3-Zc-B4o"/>
+                                        <constraint firstItem="CVV-ZI-rWY" firstAttribute="bottom" secondItem="DZo-WU-gG3" secondAttribute="bottom" id="Jmc-WF-txU"/>
+                                        <constraint firstItem="zNp-Gs-VdS" firstAttribute="leading" secondItem="CVV-ZI-rWY" secondAttribute="leading" constant="20" id="PEG-v4-Ue6"/>
+                                        <constraint firstItem="CVV-ZI-rWY" firstAttribute="bottom" secondItem="DZo-WU-gG3" secondAttribute="bottom" id="QDd-pN-q7L"/>
+                                        <constraint firstItem="DZo-WU-gG3" firstAttribute="leading" secondItem="CVV-ZI-rWY" secondAttribute="leading" id="bJq-Rm-8Wj"/>
+                                        <constraint firstItem="DZo-WU-gG3" firstAttribute="top" secondItem="azg-xq-FDf" secondAttribute="top" constant="502" id="hrm-Xf-3PN"/>
+                                        <constraint firstItem="CVV-ZI-rWY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zNp-Gs-VdS" secondAttribute="trailing" symbolic="YES" id="njH-Lw-G3w"/>
+                                        <constraint firstItem="zNp-Gs-VdS" firstAttribute="top" secondItem="CVV-ZI-rWY" secondAttribute="top" constant="20" id="pAi-P0-ulD"/>
+                                    </constraints>
+                                    <viewLayoutGuide key="safeArea" id="CVV-ZI-rWY"/>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LyY-bj-gQU" firstAttribute="trailing" secondItem="uhX-Et-JRG" secondAttribute="trailing" id="Xv7-NH-tya"/>
+                            <constraint firstItem="uhX-Et-JRG" firstAttribute="leading" secondItem="LyY-bj-gQU" secondAttribute="leading" id="ncw-v1-QEa"/>
+                            <constraint firstAttribute="bottom" secondItem="uhX-Et-JRG" secondAttribute="bottom" id="tQG-8z-bHp"/>
+                            <constraint firstItem="uhX-Et-JRG" firstAttribute="top" secondItem="xMV-Gi-cu2" secondAttribute="top" id="vZR-U9-tAi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LyY-bj-gQU"/>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="zNp-Gs-VdS" id="Fxf-tV-v3y"/>
+                        <outlet property="sendMoneyViewContainer" destination="DZo-WU-gG3" id="Azu-YM-hkH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RN0-Uh-4ag" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2451" y="1736"/>
+        </scene>
+        <!--My Wallets-->
+        <scene sceneID="5oY-Rf-uVL">
+            <objects>
+                <viewController title="My Wallets" id="XzZ-Pz-0f2" customClass="WalletsViewController" customModule="crypto_wallet_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g99-Pb-8Pd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="c1X-Tm-2an"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="DcU-DO-X47"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VrN-4b-Ea5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1659.4202898550725" y="1735.7142857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="creditcard" catalog="system" width="64" height="44"/>
+        <image name="person" catalog="system" width="64" height="58"/>
+        <image name="tag" catalog="system" width="64" height="58"/>
+    </resources>
 </document>

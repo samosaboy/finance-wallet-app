@@ -7,15 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F90D0CE623ABADDA002013BD /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90D0CE523ABADDA002013BD /* UIColorExtension.swift */; };
+		F90D0CE823ABC53E002013BD /* MainWalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90D0CE723ABC53E002013BD /* MainWalletView.swift */; };
 		F93FB1ED23AB249E00B8FFE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93FB1EC23AB249E00B8FFE4 /* AppDelegate.swift */; };
 		F93FB1EF23AB249E00B8FFE4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93FB1EE23AB249E00B8FFE4 /* SceneDelegate.swift */; };
 		F93FB1F123AB249E00B8FFE4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93FB1F023AB249E00B8FFE4 /* ViewController.swift */; };
 		F93FB1F423AB249E00B8FFE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F93FB1F223AB249E00B8FFE4 /* Main.storyboard */; };
 		F93FB1F623AB249F00B8FFE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F93FB1F523AB249F00B8FFE4 /* Assets.xcassets */; };
 		F93FB1F923AB249F00B8FFE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F93FB1F723AB249F00B8FFE4 /* LaunchScreen.storyboard */; };
+		F93FB20123AB281A00B8FFE4 /* WalletsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93FB20023AB281A00B8FFE4 /* WalletsViewController.swift */; };
+		F93FB20323AB2A1F00B8FFE4 /* WalletsNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93FB20223AB2A1F00B8FFE4 /* WalletsNavigationViewController.swift */; };
+		F961694E23AD07060019C586 /* SendMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F961694D23AD07060019C586 /* SendMoneyViewController.swift */; };
+		F97B5CCE23AC7A1400FC0EA3 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97B5CCD23AC7A1400FC0EA3 /* UIViewExt.swift */; };
+		F9C851DE23AB2CC700163DCA /* WalletItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C851DD23AB2CC700163DCA /* WalletItem.swift */; };
+		F9C851E023AB34D700163DCA /* MainAppTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C851DF23AB34D700163DCA /* MainAppTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F90D0CE523ABADDA002013BD /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		F90D0CE723ABC53E002013BD /* MainWalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWalletView.swift; sourceTree = "<group>"; };
 		F93FB1E923AB249E00B8FFE4 /* crypto-wallet-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "crypto-wallet-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F93FB1EC23AB249E00B8FFE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F93FB1EE23AB249E00B8FFE4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +34,12 @@
 		F93FB1F523AB249F00B8FFE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F93FB1F823AB249F00B8FFE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F93FB1FA23AB249F00B8FFE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F93FB20023AB281A00B8FFE4 /* WalletsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsViewController.swift; sourceTree = "<group>"; };
+		F93FB20223AB2A1F00B8FFE4 /* WalletsNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsNavigationViewController.swift; sourceTree = "<group>"; };
+		F961694D23AD07060019C586 /* SendMoneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMoneyViewController.swift; sourceTree = "<group>"; };
+		F97B5CCD23AC7A1400FC0EA3 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
+		F9C851DD23AB2CC700163DCA /* WalletItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletItem.swift; sourceTree = "<group>"; };
+		F9C851DF23AB34D700163DCA /* MainAppTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +76,27 @@
 				F93FB1EE23AB249E00B8FFE4 /* SceneDelegate.swift */,
 				F93FB1F023AB249E00B8FFE4 /* ViewController.swift */,
 				F93FB1F223AB249E00B8FFE4 /* Main.storyboard */,
+				F9C851DF23AB34D700163DCA /* MainAppTabBarController.swift */,
+				F93FB20423AB2A2A00B8FFE4 /* Wallets */,
 				F93FB1F523AB249F00B8FFE4 /* Assets.xcassets */,
 				F93FB1F723AB249F00B8FFE4 /* LaunchScreen.storyboard */,
 				F93FB1FA23AB249F00B8FFE4 /* Info.plist */,
+				F90D0CE523ABADDA002013BD /* UIColorExtension.swift */,
+				F97B5CCD23AC7A1400FC0EA3 /* UIViewExt.swift */,
 			);
 			path = "crypto-wallet-app";
+			sourceTree = "<group>";
+		};
+		F93FB20423AB2A2A00B8FFE4 /* Wallets */ = {
+			isa = PBXGroup;
+			children = (
+				F93FB20223AB2A1F00B8FFE4 /* WalletsNavigationViewController.swift */,
+				F93FB20023AB281A00B8FFE4 /* WalletsViewController.swift */,
+				F9C851DD23AB2CC700163DCA /* WalletItem.swift */,
+				F90D0CE723ABC53E002013BD /* MainWalletView.swift */,
+				F961694D23AD07060019C586 /* SendMoneyViewController.swift */,
+			);
+			path = Wallets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +170,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F961694E23AD07060019C586 /* SendMoneyViewController.swift in Sources */,
 				F93FB1F123AB249E00B8FFE4 /* ViewController.swift in Sources */,
+				F9C851DE23AB2CC700163DCA /* WalletItem.swift in Sources */,
+				F9C851E023AB34D700163DCA /* MainAppTabBarController.swift in Sources */,
+				F90D0CE623ABADDA002013BD /* UIColorExtension.swift in Sources */,
+				F97B5CCE23AC7A1400FC0EA3 /* UIViewExt.swift in Sources */,
+				F93FB20123AB281A00B8FFE4 /* WalletsViewController.swift in Sources */,
 				F93FB1ED23AB249E00B8FFE4 /* AppDelegate.swift in Sources */,
 				F93FB1EF23AB249E00B8FFE4 /* SceneDelegate.swift in Sources */,
+				F90D0CE823ABC53E002013BD /* MainWalletView.swift in Sources */,
+				F93FB20323AB2A1F00B8FFE4 /* WalletsNavigationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +334,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "hi90.crypto-wallet-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -312,7 +352,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "hi90.crypto-wallet-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
