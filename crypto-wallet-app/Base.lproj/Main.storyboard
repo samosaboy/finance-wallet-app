@@ -133,18 +133,9 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                         </button>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DZo-WU-gG3">
-                                            <rect key="frame" x="0.0" y="502" width="414" height="360"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="CVV-ZI-rWY" firstAttribute="trailing" secondItem="DZo-WU-gG3" secondAttribute="trailing" id="Dn3-Zc-B4o"/>
-                                        <constraint firstItem="CVV-ZI-rWY" firstAttribute="bottom" secondItem="DZo-WU-gG3" secondAttribute="bottom" id="Jmc-WF-txU"/>
                                         <constraint firstItem="zNp-Gs-VdS" firstAttribute="leading" secondItem="CVV-ZI-rWY" secondAttribute="leading" constant="20" id="PEG-v4-Ue6"/>
-                                        <constraint firstItem="CVV-ZI-rWY" firstAttribute="bottom" secondItem="DZo-WU-gG3" secondAttribute="bottom" id="QDd-pN-q7L"/>
-                                        <constraint firstItem="DZo-WU-gG3" firstAttribute="leading" secondItem="CVV-ZI-rWY" secondAttribute="leading" id="bJq-Rm-8Wj"/>
-                                        <constraint firstItem="DZo-WU-gG3" firstAttribute="top" secondItem="azg-xq-FDf" secondAttribute="top" constant="502" id="hrm-Xf-3PN"/>
                                         <constraint firstItem="CVV-ZI-rWY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zNp-Gs-VdS" secondAttribute="trailing" symbolic="YES" id="njH-Lw-G3w"/>
                                         <constraint firstItem="zNp-Gs-VdS" firstAttribute="top" secondItem="CVV-ZI-rWY" secondAttribute="top" constant="20" id="pAi-P0-ulD"/>
                                     </constraints>
@@ -155,16 +146,14 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="LyY-bj-gQU" firstAttribute="trailing" secondItem="uhX-Et-JRG" secondAttribute="trailing" id="Xv7-NH-tya"/>
-                            <constraint firstItem="uhX-Et-JRG" firstAttribute="leading" secondItem="LyY-bj-gQU" secondAttribute="leading" id="ncw-v1-QEa"/>
+                            <constraint firstAttribute="trailing" secondItem="uhX-Et-JRG" secondAttribute="trailing" id="Xv7-NH-tya"/>
+                            <constraint firstItem="uhX-Et-JRG" firstAttribute="leading" secondItem="xMV-Gi-cu2" secondAttribute="leading" id="ncw-v1-QEa"/>
                             <constraint firstAttribute="bottom" secondItem="uhX-Et-JRG" secondAttribute="bottom" id="tQG-8z-bHp"/>
                             <constraint firstItem="uhX-Et-JRG" firstAttribute="top" secondItem="xMV-Gi-cu2" secondAttribute="top" id="vZR-U9-tAi"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="LyY-bj-gQU"/>
                     </view>
                     <connections>
                         <outlet property="cancelButton" destination="zNp-Gs-VdS" id="Fxf-tV-v3y"/>
-                        <outlet property="sendMoneyViewContainer" destination="DZo-WU-gG3" id="Azu-YM-hkH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RN0-Uh-4ag" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -1,0 +1,6 @@
+framework module Pods_crypto_wallet_app {
+  umbrella header "Pods-crypto-wallet-app-umbrella.h"
+
+  export *
+  module * { export * }
+}

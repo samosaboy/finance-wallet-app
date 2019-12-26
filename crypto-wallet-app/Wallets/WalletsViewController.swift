@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import SwiftIcons
 
 class WalletsViewController: UIViewController, UIScrollViewDelegate {
     static var sharedInstance: WalletsViewController?
-
+    
     var wallets: [WalletItem] = [WalletItem(name: "BTC", balance: 120.42)]
     
     let scrollViewContainer: UIStackView = {
@@ -23,7 +24,7 @@ class WalletsViewController: UIViewController, UIScrollViewDelegate {
         return view
     }()
     
-    let subWallet: UIView = {
+    let thisMonth: UIView = {
         let view = UIView()
         view.heightAnchor.constraint(equalToConstant: 400).isActive = true
         view.layer.shadowColor = UIColor.black.cgColor
@@ -57,57 +58,77 @@ class WalletsViewController: UIViewController, UIScrollViewDelegate {
         return scrollView
     }()
     
-    lazy var button: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor(rgb: 0xEBFCF7)
-        button.titleLabel?.font = button.titleLabel?.font.withSize(12)
-        button.setTitleColor(UIColor(rgb: 0x1FC496), for: .normal)
-        button.setTitle("Points: 17,321", for: .normal)
-        button.contentEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.layer.masksToBounds = true
-        button.sizeToFit()
-        button.layer.cornerRadius = button.frame.size.height / 2.0
-        return button
-    }()
-    
-    lazy var largeTitleLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: UIFont.preferredFont(forTextStyle: .largeTitle).pointSize, weight: .heavy)
-        label.text = "My Wallets"
-        label.setContentHuggingPriority(.defaultLow, for: .horizontal)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
     lazy var smallTitleLabel: UILabel = {
         let label = UILabel()
         label.alpha = 0
-        label.backgroundColor = UIColor.clear
         label.font = UIFont.systemFont(ofSize: UIFont.preferredFont(forTextStyle: .headline).pointSize, weight: .semibold)
-        label.text = "My Wallets"
+        label.text = "Dashboard"
         return label
     }()
     
     lazy var contactImage: UIImageView = {
         let view = UIImageView(frame: CGRect(x: 0, y: 0, width: 45, height: 45))
         view.backgroundColor = .clear
+        view.translatesAutoresizingMaskIntoConstraints = false
         view.image = UIImage(named: "contact-photo")
+        view.contentMode = .center
         return view
     }()
     
-    lazy var contactView: UIView = {
+    lazy var pageTitle: UIView = {
+        let view = UIView(frame: CGRect(x: 10, y: 10, width: 100, height: 100))
+        view.translatesAutoresizingMaskIntoConstraints = false
+        let overviewText = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
+        overviewText.text = "Overview"
+        overviewText.font = UIFont.systemFont(ofSize: UIFont.preferredFont(forTextStyle: .body).pointSize, weight: .regular)
+        overviewText.textColor = .black
+        overviewText.sizeToFit()
+        
+        let dashboardText = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
+        dashboardText.text = "Dashboard"
+        dashboardText.font = UIFont.systemFont(ofSize: 34, weight: .bold)
+        dashboardText.textColor = .black
+        dashboardText.sizeToFit()
+        
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .vertical
+        stack.addArrangedSubview(overviewText)
+        stack.addArrangedSubview(dashboardText)
+        view.addSubview(stack)
+        return view
+    }()
+    
+    lazy var rightView: UIView = {
         let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        let button = UIButton()
+        button.setIcon(icon: .ionicons(.androidNotificationsNone), iconSize: 32, color: .black, forState: .normal)
+        button.sizeToFit()
+        
+        view.addSubview(button)
         view.addSubview(contactImage)
+        
+        contactImage.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        button.rightAnchor.constraint(equalTo: contactImage.rightAnchor, constant: -contactImage.frame.size.width - 10).isActive = true
+        
         return view
     }()
     
     lazy var titleView: UIStackView = {
-        let view = UIStackView(arrangedSubviews: [contactView, button])
+        let view = UIStackView()
         view.axis = .horizontal
+        view.alignment = .bottom
         view.distribution = .fill
-        view.alignment = .center
+        view.addArrangedSubview(pageTitle)
+        view.addArrangedSubview(rightView)
         view.translatesAutoresizingMaskIntoConstraints = false
+        
+        pageTitle.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        pageTitle.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        rightView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        rightView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         return view
     }()
     
@@ -120,18 +141,36 @@ class WalletsViewController: UIViewController, UIScrollViewDelegate {
         let view = UIView()
         view.backgroundColor = .clear
         view.heightAnchor.constraint(equalToConstant: 45).isActive = true
+        view.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(titleView)
         
-        contactImage.center = CGPoint(x: contactImage.bounds.width / 2, y: 0)
-        
-        titleView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        titleView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        titleView.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
-        titleView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        pageTitle.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        rightView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        rightView.topAnchor.constraint(equalTo: pageTitle.topAnchor, constant: 10).isActive = true
         
         return view
     }()
-
+    
+    lazy var thisMonthView: UIStackView = {
+        let view = UIStackView()
+        view.axis = .horizontal
+        view.alignment = .center
+        view.distribution = .fill
+        
+        let thisMonthText = UILabel()
+        thisMonthText.text = "This Month"
+        thisMonthText.font = UIFont.systemFont(ofSize: UIFont.preferredFont(forTextStyle: .title2).pointSize, weight: .bold)
+        
+        let viewMoreText = UILabel()
+        viewMoreText.text = "View More"
+        viewMoreText.textColor = .lightGray
+        viewMoreText.font = UIFont.systemFont(ofSize: UIFont.preferredFont(forTextStyle: .body).pointSize, weight: .semibold)
+        
+        view.addArrangedSubview(thisMonthText)
+        view.addArrangedSubview(viewMoreText)
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -153,7 +192,9 @@ class WalletsViewController: UIViewController, UIScrollViewDelegate {
         scrollViewContainer.addArrangedSubview(headerView)
         scrollViewContainer.addArrangedSubview(mainWalletView)
         
-        scrollViewContainer.addArrangedSubview(subWallet)
+        scrollViewContainer.addArrangedSubview(thisMonthView)
+        
+        scrollViewContainer.addArrangedSubview(thisMonth)
         scrollViewContainer.addArrangedSubview(subWallet2)
         
         NSLayoutConstraint.activate([
@@ -172,7 +213,11 @@ class WalletsViewController: UIViewController, UIScrollViewDelegate {
         ])
     }
     
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let view = ThisMonthView(frame: CGRect(x: 0, y: 0, width: thisMonthView.frame.size.width, height: 400))
+        thisMonth.addSubview(view)
+    }
     
     @objc
     func showSendMoney(_ sender: Any) {
@@ -191,7 +236,7 @@ class WalletsViewController: UIViewController, UIScrollViewDelegate {
             })
         }
         
-        let maxTitlePoint = CGPoint(x: titleView.bounds.minY, y: titleView.bounds.maxY)
+        let maxTitlePoint = CGPoint(x: headerView.bounds.minY, y: headerView.bounds.maxY)
         
         if maxTitlePoint.y < scrollView.contentOffset.y {
             self.navigationController?.navigationBar.layer.shadowOpacity = 0.1

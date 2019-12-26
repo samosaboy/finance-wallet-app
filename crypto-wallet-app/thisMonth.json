@@ -1,0 +1,7 @@
+[
+    {
+        name: "Credit Card",
+        description: "You paid $2,432.99 in credit card payments",
+        pointsAmount: 2000,
+    }
+]

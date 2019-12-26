@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Credit Card",
+        "description": "You paid $2,432.99 in credit card payments.",
+        "pointsAmount": 2000,
+    },
+    {
+        "name": "Rent & Utilities",
+        "description": "You paid $1,680 in rent and utility payments.",
+        "pointsAmount": 5000,
+    },
+    {
+        "name": "Gifts",
+        "description": "You bought $500 worth of gifts.",
+        "pointsAmount": 500,
+    },
+    {
+        "name": "Shops",
+        "description": "You spent $500 in shops.",
+        "pointsAmount": 500,
+    }
+]

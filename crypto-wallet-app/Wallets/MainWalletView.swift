@@ -14,9 +14,9 @@ class MainWalletView: UIView {
     lazy var balanceText: UILabel = {
         let label = UILabel()
         label.backgroundColor = .clear
-        label.textColor = .black
-        label.text = "Total Balance"
-        label.font = UIFont.systemFont(ofSize: UIFont.preferredFont(forTextStyle: .caption1).pointSize, weight: .regular)
+        label.textColor = .lightGray
+        label.text = "Total spending this month"
+        label.font = UIFont.systemFont(ofSize: UIFont.preferredFont(forTextStyle: .body).pointSize, weight: .regular)
         label.sizeToFit()
         return label
     }()
@@ -26,7 +26,7 @@ class MainWalletView: UIView {
         label.backgroundColor = .clear
         label.textColor = .black
         label.text = "$5,039.53"
-        label.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
+        label.font = UIFont.systemFont(ofSize: UIFont.preferredFont(forTextStyle: .title2).pointSize, weight: .bold)
         label.sizeToFit()
         return label
     }()
@@ -69,7 +69,6 @@ class MainWalletView: UIView {
         button.layer.masksToBounds = true
         button.sizeToFit()
         button.addTarget(WalletsViewController.sharedInstance!, action: #selector(WalletsViewController.showSendMoney(_:)), for: .touchUpInside)
-//        button.addTarget(SendMoneyViewController.sharedInstance!, action: #selector(SendMoneyViewController.testAction(_:)), for: .touchUpInside)
         button.layer.cornerRadius = button.frame.size.height / 2.0
         return button
     }()
