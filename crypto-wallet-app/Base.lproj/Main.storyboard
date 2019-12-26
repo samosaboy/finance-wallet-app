@@ -151,6 +151,7 @@
                             <constraint firstAttribute="bottom" secondItem="uhX-Et-JRG" secondAttribute="bottom" id="tQG-8z-bHp"/>
                             <constraint firstItem="uhX-Et-JRG" firstAttribute="top" secondItem="xMV-Gi-cu2" secondAttribute="top" id="vZR-U9-tAi"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="3pM-i2-5oC"/>
                     </view>
                     <connections>
                         <outlet property="cancelButton" destination="zNp-Gs-VdS" id="Fxf-tV-v3y"/>
@@ -158,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RN0-Uh-4ag" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2451" y="1736"/>
+            <point key="canvasLocation" x="-2452.1739130434785" y="1735.7142857142856"/>
         </scene>
         <!--My Wallets-->
         <scene sceneID="5oY-Rf-uVL">
@@ -167,6 +168,16 @@
                     <view key="view" contentMode="scaleToFill" id="g99-Pb-8Pd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" translatesAutoresizingMaskIntoConstraints="NO" id="M74-ju-VBS">
+                                <rect key="frame" x="11" y="434" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="M74-ju-VBS" id="vBN-Ey-p84">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="c1X-Tm-2an"/>
                     </view>

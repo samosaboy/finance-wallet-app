@@ -37,10 +37,42 @@ class ThisMonthView: UIView, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath as IndexPath) as! DataCell
-        cell.titleText = "\(dataArray[indexPath.row].name)"
-        cell.descText = "\(dataArray[indexPath.row].description)"
-        return cell
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath as IndexPath)
+        
+        var cell = tableView.dequeueReusableCell(withIdentifier: "cell")
+        if cell == nil {
+            cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
+        }
+        
+        cell?.textLabel?.text = "\(dataArray[indexPath.row].name)"
+        cell?.textLabel?.font = UIFont.systemFont(ofSize: UIFont.preferredFont(forTextStyle: .headline).pointSize, weight: .bold)
+        cell?.detailTextLabel?.text = "\(dataArray[indexPath.row].description)"
+        cell?.detailTextLabel?.numberOfLines = 0
+        cell?.detailTextLabel?.font = UIFont.systemFont(ofSize: UIFont.preferredFont(forTextStyle: .caption1).pointSize, weight: .regular)
+        cell?.detailTextLabel?.textColor = .gray
+        
+        let button = UIButton()
+        button.backgroundColor = UIColor(rgb: 0xEBFCF7)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .bold)
+        button.setTitleColor(UIColor(rgb: 0x1FC496), for: .normal)
+        button.setTitle("+\(dataArray[indexPath.row].pointsAmount) Pts", for: .normal)
+        button.contentEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.masksToBounds = true
+        button.sizeToFit()
+        button.layer.cornerRadius = button.frame.size.height / 2.0
+        
+        cell?.accessoryView = button
+        
+        return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
     }
     
     override init(frame: CGRect) {
@@ -48,13 +80,13 @@ class ThisMonthView: UIView, UITableViewDelegate, UITableViewDataSource {
         
         tableView = UITableView(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height))
         tableView.isScrollEnabled = false
-        tableView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         
         self.addSubview(tableView)
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(DataCell.self, forCellReuseIdentifier: "cell")
+//        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
         loadData()
     }

@@ -14,7 +14,7 @@ class DataCell: UITableViewCell {
     
     var titleView: UITextView = {
         let view = UITextView()
-//        view.backgroundColor = .blue
+        view.backgroundColor = .gray
         view.isScrollEnabled = false
         view.font = UIFont.systemFont(ofSize: UIFont.preferredFont(forTextStyle: .headline).pointSize, weight: .bold)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -23,7 +23,7 @@ class DataCell: UITableViewCell {
     
     var descriptionView: UITextView = {
         let view = UITextView()
-//        view.backgroundColor = .red
+        view.backgroundColor = .lightGray
         view.isScrollEnabled = false
         view.font = UIFont.systemFont(ofSize: UIFont.preferredFont(forTextStyle: .subheadline).pointSize, weight: .regular)
         view.textColor = .gray
@@ -37,7 +37,6 @@ class DataCell: UITableViewCell {
         stack.sizeToFit()
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
-//        stack.distribution = .fillProportionally
         stack.spacing = 0
         self.addSubview(stack)
         
@@ -48,14 +47,15 @@ class DataCell: UITableViewCell {
             stack.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             stack.heightAnchor.constraint(equalTo: self.heightAnchor),
             
-            titleView.leftAnchor.constraint(equalTo: stack.leftAnchor),
-            titleView.rightAnchor.constraint(equalTo: stack.rightAnchor),
-            titleView.topAnchor.constraint(equalTo: stack.topAnchor),
-            
-            descriptionView.leftAnchor.constraint(equalTo: titleView.leftAnchor),
-            descriptionView.rightAnchor.constraint(equalTo: titleView.rightAnchor),
-            descriptionView.topAnchor.constraint(equalTo: titleView.bottomAnchor, constant: 0),
-            descriptionView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+//            titleView.leftAnchor.constraint(equalTo: stack.leftAnchor),
+//            titleView.rightAnchor.constraint(equalTo: stack.rightAnchor),
+//            titleView.topAnchor.constraint(equalTo: stack.topAnchor),
+//            titleView.bottomAnchor.constraint(greaterThanOrEqualTo: stack.bottomAnchor),
+//
+//            descriptionView.leftAnchor.constraint(equalTo: titleView.leftAnchor),
+//            descriptionView.rightAnchor.constraint(equalTo: titleView.rightAnchor),
+//            descriptionView.topAnchor.constraint(equalTo: titleView.bottomAnchor, constant: 0),
+//            descriptionView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
         ])
     }
     
