@@ -40,6 +40,7 @@ class ThisMonthView: UIView, UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DataCell", for: indexPath as IndexPath) as! DataTableViewCell
         cell.title.text = "\(dataArray[indexPath.row].name)"
         cell.subtitle.text = "\(dataArray[indexPath.row].description)"
+        cell.button.setTitle("+\(dataArray[indexPath.row].pointsAmount) Pts", for: .normal)
         return cell
     }
     
