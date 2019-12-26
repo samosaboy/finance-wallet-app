@@ -26,7 +26,7 @@ class WalletsViewController: UIViewController, UIScrollViewDelegate {
     
     let thisMonth: UIView = {
         let view = UIView()
-        view.heightAnchor.constraint(equalToConstant: 400).isActive = true
+        view.heightAnchor.constraint(equalToConstant: 305).isActive = true
         view.layer.shadowColor = UIColor.black.cgColor
         view.layer.cornerRadius = 10
         view.layer.shadowOpacity = 0.1
@@ -215,16 +215,9 @@ class WalletsViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let view = ThisMonthView(frame: CGRect(x: 0, y: 0, width: thisMonthView.frame.size.width, height: thisMonth.frame.size.height))
-        thisMonth.addSubview(view)
+        let view = ThisMonthView(frame: CGRect(x: 10, y: 10, width: thisMonthView.frame.size.width - 20, height: thisMonth.frame.size.height - 20))
         
-        NSLayoutConstraint.activate([
-            view.leftAnchor.constraint(equalTo: thisMonth.leftAnchor),
-            view.rightAnchor.constraint(equalTo: thisMonth.rightAnchor),
-            view.topAnchor.constraint(equalTo: thisMonth.topAnchor),
-            view.bottomAnchor.constraint(equalTo: thisMonth.bottomAnchor),
-
-        ])
+        thisMonth.addSubview(view)
     }
     
     @objc

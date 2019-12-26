@@ -15,13 +15,13 @@ class MainAppTabBarController: UITabBarController {
 //        self.tabBar.barTintColor = UIColor.white
         self.tabBar.tintColor = UIColor.black
 //
-//        self.tabBar.layer.borderWidth = 0.5
-//        self.tabBar.layer.borderColor = UIColor.clear.cgColor
-//
-//        self.tabBar.layer.shadowOffset = CGSize(width: 0, height:0)
-//        self.tabBar.layer.shadowRadius = 8
-//        self.tabBar.layer.shadowColor = UIColor.black.cgColor
-//        self.tabBar.layer.shadowOpacity = 0.1
+        self.tabBar.layer.borderWidth = 0.5
+        self.tabBar.layer.borderColor = UIColor.clear.cgColor
+
+        self.tabBar.layer.shadowOffset = CGSize(width: 0, height:0)
+        self.tabBar.layer.shadowRadius = 8
+        self.tabBar.layer.shadowColor = UIColor.black.cgColor
+        self.tabBar.layer.shadowOpacity = 0.1
     }
     
     /*

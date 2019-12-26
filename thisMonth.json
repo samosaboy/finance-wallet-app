@@ -3,20 +3,24 @@
         "name": "Credit Card",
         "description": "You paid $2,432.99 in credit card payments.",
         "pointsAmount": 2000,
+        "image": "cc_image",
     },
     {
         "name": "Rent & Utilities",
         "description": "You paid $1,680 in rent and utility payments.",
         "pointsAmount": 5000,
+        "image": "rent_image",
     },
     {
         "name": "Gifts",
         "description": "You bought $500 worth of gifts.",
         "pointsAmount": 500,
+        "image": "gifts_image",
     },
     {
         "name": "Shops",
-        "description": "You spent $500 in shops.",
+        "description": "You spent $500 in other shops.",
         "pointsAmount": 500,
+        "image": "shops_image",
     }
 ]

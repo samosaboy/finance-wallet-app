@@ -12,6 +12,7 @@ struct LineData: Decodable {
     let name: String
     let description: String
     let pointsAmount: Int
+    let image: String
 }
 
 class ThisMonthView: UIView, UITableViewDelegate, UITableViewDataSource {
@@ -41,6 +42,8 @@ class ThisMonthView: UIView, UITableViewDelegate, UITableViewDataSource {
         cell.title.text = "\(dataArray[indexPath.row].name)"
         cell.subtitle.text = "\(dataArray[indexPath.row].description)"
         cell.button.setTitle("+\(dataArray[indexPath.row].pointsAmount) Pts", for: .normal)
+        cell.icon.image = UIImage(named: "\(dataArray[indexPath.row].image)")
+        
         return cell
     }
     
@@ -58,12 +61,12 @@ class ThisMonthView: UIView, UITableViewDelegate, UITableViewDataSource {
         
         tableView = UITableView(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height))
         tableView.isScrollEnabled = false
-        //        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
         self.addSubview(tableView)
         
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
         
         let customCell = UINib(nibName: "DataTableViewCell", bundle: nil)
         tableView.register(customCell, forCellReuseIdentifier: "DataCell")

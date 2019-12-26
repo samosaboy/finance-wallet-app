@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import SwiftIcons
 
 class DataTableViewCell: UITableViewCell {
     
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var subtitle: UILabel!
     @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var icon: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,5 +37,7 @@ class DataTableViewCell: UITableViewCell {
         button.layer.masksToBounds = true
         button.sizeToFit()
         button.layer.cornerRadius = button.frame.size.height / 2.0
+        
+        icon.contentMode = .scaleAspectFit
     }
 }
