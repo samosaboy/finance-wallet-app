@@ -215,8 +215,16 @@ class WalletsViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let view = ThisMonthView(frame: CGRect(x: 0, y: 0, width: thisMonthView.frame.size.width, height: 400))
+        let view = ThisMonthView(frame: CGRect(x: 0, y: 0, width: thisMonthView.frame.size.width, height: thisMonth.frame.size.height))
         thisMonth.addSubview(view)
+        
+        NSLayoutConstraint.activate([
+            view.leftAnchor.constraint(equalTo: thisMonth.leftAnchor),
+            view.rightAnchor.constraint(equalTo: thisMonth.rightAnchor),
+            view.topAnchor.constraint(equalTo: thisMonth.topAnchor),
+            view.bottomAnchor.constraint(equalTo: thisMonth.bottomAnchor),
+
+        ])
     }
     
     @objc
